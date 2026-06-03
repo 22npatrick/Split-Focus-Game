@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 
-const SPEED = 600.0
-const JUMP_VELOCITY = -600
+const SPEED = 600
+const JUMP_VELOCITY = -700
 
 
 func _physics_process(delta: float) -> void:
@@ -21,5 +21,19 @@ func _physics_process(delta: float) -> void:
 	#	velocity.x = direction * SPEED
 	#else:
 	#	velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	
+	# COLIISION DETECTION
 	move_and_slide()
+	var collision = move_and_collide(velocity * delta)
+	for i in get_slide_collision_count():
+		collision = get_slide_collision(i)
+#		if collision.get_collider().is_in_group("floor"):
+#			break
+		if collision.get_collider().is_in_group("obstacles"):
+			get_tree().change_scene_to_file("res://Scene/end_game_scene.tscn")
+		#print("I collided with ", collision.get_collider().name)
+	
+
+
+	
+	

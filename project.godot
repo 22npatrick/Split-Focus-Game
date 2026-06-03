@@ -15,6 +15,11 @@ run/main_scene="uid://cruggdt3dhxew"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 
+[global_group]
+
+obstacles=""
+floor=""
+
 [input]
 
 up={
