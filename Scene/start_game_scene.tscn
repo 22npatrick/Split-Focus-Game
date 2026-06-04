@@ -1,5 +1,14 @@
 [gd_scene format=3 uid="uid://c18oij3dbx4mq"]
 
+[sub_resource type="GDScript" id="GDScript_86oph"]
+script/source = "extends Control
+
+
+
+func on_button_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://Scene/main_1.tscn\")
+"
+
 [node name="StartGameScene" type="Control" unique_id=2121128182]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +16,24 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = SubResource("GDScript_86oph")
+
+[node name="Button" type="Button" parent="." unique_id=1119947627]
+layout_mode = 0
+offset_left = 646.0
+offset_top = 278.0
+offset_right = 654.0
+offset_bottom = 286.0
+text = "START GAME
+"
+
+[node name="Label" type="Label" parent="." unique_id=1829427879]
+layout_mode = 0
+offset_left = 674.0
+offset_top = 315.0
+offset_right = 738.0
+offset_bottom = 364.0
+text = "LOLOLO
+"
+
+[connection signal="pressed" from="Button" to="." method="on_button_pressed"]
