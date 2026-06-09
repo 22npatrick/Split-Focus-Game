@@ -3,6 +3,18 @@
 [ext_resource type="PackedScene" uid="uid://btmagaeapfqbi" path="res://Scene/player_1.tscn" id="1_g3nmm"]
 [ext_resource type="Texture2D" uid="uid://cq1en5h353fnt" path="res://Assets/icon.svg" id="2_o8mxn"]
 
+[sub_resource type="GDScript" id="GDScript_2prf1"]
+script/source = "extends Node2D
+
+func _ready():
+	$Timer.start()
+	print(\"Time has started\")
+
+func _on_timer_timeout():
+	print(\"Time is out\")
+	$Timer.start()
+"
+
 [sub_resource type="GDScript" id="GDScript_o8mxn"]
 script/source = "extends AnimatableBody2D
 
@@ -62,6 +74,7 @@ height = 118.0
 size = Vector2(238, 2)
 
 [node name="main_1" type="Node2D" unique_id=277038257]
+script = SubResource("GDScript_2prf1")
 metadata/_edit_group_ = true
 
 [node name="Player 1" parent="." unique_id=332314824 instance=ExtResource("1_g3nmm")]
@@ -102,3 +115,5 @@ position = Vector2(0, -2)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Permanent Floor" unique_id=1100670722]
 position = Vector2(566, 386)
 shape = SubResource("RectangleShape2D_2prf1")
+
+[node name="Timer" type="Timer" parent="." unique_id=1919524652]

@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://cruggdt3dhxew"]
+
+[ext_resource type="PackedScene" uid="uid://btmagaeapfqbi" path="res://Scene/player_1.tscn" id="1_g3nmm"]
+[ext_resource type="Texture2D" uid="uid://cq1en5h353fnt" path="res://Assets/icon.svg" id="2_o8mxn"]
+
+[sub_resource type="GDScript" id="GDScript_o8mxn"]
+script/source = "extends AnimatableBody2D
+
+
+func _ready() -> void:
+	$AnimationPlayer.play(\"Move\")
+"
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_o8mxn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8mxn"]
+size = Vector2(2307, 124)
+
+[sub_resource type="Animation" id="Animation_o8mxn"]
+resource_name = "Move"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1720, 451), Vector2(560, 451)]
+}
+
+[sub_resource type="Animation" id="Animation_2prf1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(56, 451)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5dlce"]
+_data = {
+&"Move": SubResource("Animation_o8mxn"),
+&"RESET": SubResource("Animation_2prf1")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o8mxn"]
+radius = 37.0
+height = 118.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2prf1"]
+size = Vector2(238, 2)
+
+[sub_resource type="GDScript" id="GDScript_2prf1"]
+script/source = "extends Timer
+
+var  score = 0
+
+
+func _on_timer_timeout():
+	score += 1
+	print(score)
+w
+"
+
+[node name="main_1" type="Node2D" unique_id=277038257]
+metadata/_edit_group_ = true
+
+[node name="Player 1" parent="." unique_id=332314824 instance=ExtResource("1_g3nmm")]
+position = Vector2(566, 300)
+
+[node name="Floor 1" type="AnimatableBody2D" parent="." unique_id=872250119 groups=["floor"]]
+position = Vector2(56, 451)
+script = SubResource("GDScript_o8mxn")
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor 1" unique_id=210423686]
+position = Vector2(-566.5001, -0.49999332)
+scale = Vector2(2304.9998, 124.99996)
+texture = SubResource("PlaceholderTexture2D_o8mxn")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor 1" unique_id=1399567920]
+position = Vector2(-569.5, 1)
+shape = SubResource("RectangleShape2D_o8mxn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Floor 1" unique_id=1496855876]
+libraries/ = SubResource("AnimationLibrary_5dlce")
+
+[node name="StaticBody2DObsticle1" type="StaticBody2D" parent="Floor 1" unique_id=1454613047 groups=["obstacles"]]
+position = Vector2(-576, -158)
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor 1/StaticBody2DObsticle1" unique_id=1741169993]
+position = Vector2(7.333252, 28)
+scale = Vector2(0.4947948, 0.76562494)
+texture = ExtResource("2_o8mxn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor 1/StaticBody2DObsticle1" unique_id=1342520515]
+position = Vector2(8, 31)
+shape = SubResource("CapsuleShape2D_o8mxn")
+
+[node name="Permanent Floor" type="StaticBody2D" parent="." unique_id=1410077902 groups=["floor"]]
+position = Vector2(0, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Permanent Floor" unique_id=1100670722]
+position = Vector2(566, 386)
+shape = SubResource("RectangleShape2D_2prf1")
+
+[node name="Timer" type="Timer" parent="." unique_id=1919524652]
+script = SubResource("GDScript_2prf1")
