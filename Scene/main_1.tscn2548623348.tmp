@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cruggdt3dhxew"]
 
-[ext_resource type="PackedScene" uid="uid://btmagaeapfqbi" path="res://Scenes/player_1.tscn" id="1_g3nmm"]
+[ext_resource type="PackedScene" uid="uid://btmagaeapfqbi" path="res://Scene/player_1.tscn" id="1_g3nmm"]
 [ext_resource type="Texture2D" uid="uid://cq1en5h353fnt" path="res://Assets/icon.svg" id="2_o8mxn"]
 
 [sub_resource type="GDScript" id="GDScript_o8mxn"]
@@ -64,7 +64,6 @@ size = Vector2(238, 2)
 [sub_resource type="GDScript" id="GDScript_5dlce"]
 script/source = "extends Timer
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.score = 0
@@ -74,8 +73,13 @@ func _on_timeout() -> void:
 	Global.score += 1
 	print(\"new score \" + str(Global.score))
 	$\"../Label\".text = (\"Score: \" + str(Global.score))
-	start()
-	print()
+	if (Global.high_score) <= (Global.score):
+		print(\"PRINT\")
+		Global.high_score = Global.score
+		print(Global.high_score)
+	else:
+		print(\"fre\")
+	
 "
 
 [node name="Main1" type="Node2D" unique_id=277038257]

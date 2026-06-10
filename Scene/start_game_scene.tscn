@@ -3,7 +3,8 @@
 [sub_resource type="GDScript" id="GDScript_86oph"]
 script/source = "extends Control
 
-
+func _ready(): 
+	$AllTimeHighScoreLabel2.text = (\"All Time High Score: \" +  str(Global.high_score))
 
 func on_button_pressed() -> void:
 	get_tree().change_scene_to_file(\"res://Scene/main_1.tscn\")
@@ -29,17 +30,18 @@ text = "START GAME
 
 [node name="Label" type="Label" parent="." unique_id=1829427879]
 layout_mode = 0
-offset_left = 562.0
-offset_top = 211.0
-offset_right = 626.0
+offset_left = 545.0
+offset_top = 215.0
+offset_right = 664.0
 offset_bottom = 260.0
-text = "text
-"
+text = "SPLIT FOCUS "
 
-[node name="Label2" type="Label" parent="." unique_id=27555180]
+[node name="AllTimeHighScoreLabel2" type="Label" parent="." unique_id=27555180]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 529.0
+offset_top = 293.0
+offset_right = 686.0
+offset_bottom = 316.0
 text = "All Time High Score: "
 
 [connection signal="pressed" from="Button" to="." method="on_button_pressed"]

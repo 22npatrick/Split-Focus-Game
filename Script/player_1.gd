@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 100
-const JUMP_VELOCITY = -600
+const JUMP_VELOCITY = -450
 
 
 func _physics_process(delta: float) -> void:
@@ -29,11 +29,3 @@ func _physics_process(delta: float) -> void:
 		collision = get_slide_collision(i)
 		if collision.get_collider().is_in_group("obstacles"):
 			get_tree().call_deferred("change_scene_to_packed", preload("res://Scene/end_game_scene.tscn"))
-			
-	
-
-	
-
-
-	
-	
