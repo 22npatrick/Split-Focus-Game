@@ -8,9 +8,6 @@ script/source = "extends AnimatableBody2D
 
 func _ready() -> void:
 	$AnimationPlayer.play(\"Move\")
-	#if (Global.score % 3) == (0):
-		#print(\"tex\")
-		#$AnimationPlayer.speed_scale = $AnimationPlayer.speed_scale * 0.5
 "
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_o8mxn"]
@@ -81,6 +78,11 @@ func _on_timeout() -> void:
 		print(Global.high_score)
 	else:
 		print(\"fre\")
+	if $\"../Floor 1/AnimationPlayer\".speed_scale < 2:
+		$\"../Floor 1/AnimationPlayer\".speed_scale = $\"../Floor 1/AnimationPlayer\".speed_scale * 1.05
+	else:
+		$\"../Floor 1/AnimationPlayer\".speed_scale = 0.75
+		
 "
 
 [node name="Main1" type="Node2D" unique_id=277038257]
