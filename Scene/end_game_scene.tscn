@@ -32,27 +32,28 @@ text = "TRY AGAIN
 
 [node name="Label" type="Label" parent="." unique_id=1117792933]
 layout_mode = 0
-offset_left = 502.0
-offset_top = 189.0
-offset_right = 624.0
-offset_bottom = 238.0
+offset_left = 390.0
+offset_top = 143.0
+offset_right = 753.0
+offset_bottom = 280.0
+theme_override_font_sizes/font_size = 48
 text = "YOU HAVE DIED
 "
 
 [node name="AllTimeHighScoreLabel1" type="Label" parent="." unique_id=69891584]
 layout_mode = 0
-offset_left = 408.0
-offset_top = 293.0
-offset_right = 565.0
-offset_bottom = 316.0
+offset_left = 396.0
+offset_top = 294.0
+offset_right = 553.0
+offset_bottom = 317.0
 text = "All Time High Score: "
 
 [node name="HighScoreLabel1" type="Label" parent="." unique_id=1114565961]
 layout_mode = 0
-offset_left = 611.0
-offset_top = 301.0
-offset_right = 737.0
-offset_bottom = 324.0
+offset_left = 598.0
+offset_top = 294.0
+offset_right = 724.0
+offset_bottom = 317.0
 text = "Run High Score: "
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

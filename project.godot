@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Split-Focus"
-run/main_scene="uid://cruggdt3dhxew"
+run/main_scene="uid://c18oij3dbx4mq"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 
