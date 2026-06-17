@@ -92,7 +92,7 @@ func _on_timeout() -> void:
 metadata/_edit_group_ = true
 
 [node name="Player 1" parent="." unique_id=332314824 instance=ExtResource("1_g3nmm")]
-position = Vector2(566, 300)
+position = Vector2(166, 300)
 
 [node name="Floor 1" type="AnimatableBody2D" parent="." unique_id=872250119 groups=["floor"]]
 position = Vector2(56, 451)
@@ -124,7 +124,7 @@ position = Vector2(8, 31)
 shape = SubResource("CapsuleShape2D_o8mxn")
 
 [node name="Permanent Floor" type="StaticBody2D" parent="." unique_id=1410077902 groups=["floor"]]
-position = Vector2(0, -2)
+position = Vector2(-400, -2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Permanent Floor" unique_id=1100670722]
 position = Vector2(566, 386)
