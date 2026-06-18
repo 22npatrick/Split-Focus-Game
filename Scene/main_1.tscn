@@ -10,10 +10,7 @@ func _ready() -> void:
 	$AnimationPlayer.play(\"Move\")
 "
 
-[sub_resource type="Gradient" id="Gradient_o8mxn"]
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_2prf1"]
-gradient = SubResource("Gradient_o8mxn")
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_o8mxn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o8mxn"]
 size = Vector2(2307, 124)
@@ -81,27 +78,26 @@ func _on_timeout() -> void:
 		print(Global.high_score)
 	else:
 		print(\"fre\")
-	if $\"../Floor 1/AnimationPlayer\".speed_scale < 2:
-		$\"../Floor 1/AnimationPlayer\".speed_scale = $\"../Floor 1/AnimationPlayer\".speed_scale * 1.05
+	if $\"../Floor 1/AnimationPlayer\".speed_scale < 1.5:
+		$\"../Floor 1/AnimationPlayer\".speed_scale = $\"../Floor 1/AnimationPlayer\".speed_scale * 1.03
 	#else:
 		#$\"../Floor 1/AnimationPlayer\".speed_scale = 0.75
-		
 "
 
 [node name="Main1" type="Node2D" unique_id=277038257]
 metadata/_edit_group_ = true
 
 [node name="Player 1" parent="." unique_id=332314824 instance=ExtResource("1_g3nmm")]
-position = Vector2(166, 300)
+position = Vector2(166, 314)
 
 [node name="Floor 1" type="AnimatableBody2D" parent="." unique_id=872250119 groups=["floor"]]
 position = Vector2(56, 451)
 script = SubResource("GDScript_o8mxn")
 
 [node name="Sprite2D" type="Sprite2D" parent="Floor 1" unique_id=210423686]
-position = Vector2(-566.5001, -0.49999332)
-scale = Vector2(2304.9998, 124.99996)
-texture = SubResource("GradientTexture1D_2prf1")
+position = Vector2(207.50006, 1.5000052)
+scale = Vector2(3851.0002, 122.999985)
+texture = SubResource("PlaceholderTexture2D_o8mxn")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor 1" unique_id=1399567920]
@@ -115,8 +111,8 @@ libraries/ = SubResource("AnimationLibrary_5dlce")
 position = Vector2(-576, -158)
 
 [node name="Sprite2D" type="Sprite2D" parent="Floor 1/StaticBody2DObsticle1" unique_id=1741169993]
-position = Vector2(7.333252, 28)
-scale = Vector2(0.4947948, 0.76562494)
+position = Vector2(7.333252, 33.499996)
+scale = Vector2(0.4947948, 0.8515624)
 texture = ExtResource("2_o8mxn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor 1/StaticBody2DObsticle1" unique_id=1342520515]
