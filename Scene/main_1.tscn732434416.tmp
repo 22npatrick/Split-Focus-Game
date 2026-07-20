@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cruggdt3dhxew"]
 
 [ext_resource type="PackedScene" uid="uid://btmagaeapfqbi" path="res://Scene/player_1.tscn" id="1_g3nmm"]
-[ext_resource type="Texture2D" uid="uid://c2w3ximrqf5db" path="res://Assets/Blockers-20260702-131519-frame0.png" id="2_o8mxn"]
+[ext_resource type="Texture2D" uid="uid://cq1en5h353fnt" path="res://Assets/icon.svg" id="2_o8mxn"]
 
 [sub_resource type="GDScript" id="GDScript_o8mxn"]
 script/source = "extends AnimatableBody2D
@@ -33,6 +33,20 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(1720, 451), Vector2(560, 451)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StaticBody2DObsticle1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.9333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [Vector2(3, 3)],
+"method": &"apply_scale"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_2prf1"]
 length = 0.001
@@ -55,6 +69,44 @@ _data = {
 &"RESET": SubResource("Animation_2prf1")
 }
 
+[sub_resource type="GDScript" id="GDScript_as46j"]
+script/source = "extends Sprite2D
+
+var capsule 
+var base_height
+var base_radius
+var target_scale = 2.00
+var base_scale = 1.00
+var scale_speed = 0.025
+var frame_timer = 0.0
+var frame_delay = 0.2
+var rand_num = 10
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	$\".\".scale = Vector2(base_scale, base_scale)
+	capsule = $\"../CollisionShape2D\".shape as CapsuleShape2D
+	base_height = capsule.height
+	base_radius = capsule.radius
+	
+	
+
+	
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	apply_scale(Vector2(10,10))
+	if Input.is_action_just_pressed(\"up\"):
+		if $\".\".scale == Vector2(base_scale ,base_scale):
+			print(\"ten\")
+			$\".\".scale = Vector2(target_scale, target_scale)
+##
+#func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	#if $\".\".scale == Vector2(base_scale ,base_scale):
+	#print(\"ten\")
+	#$\".\".scale = Vector2(target_scale, target_scale)
+#
+"
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o8mxn"]
 radius = 37.0
 height = 118.0
@@ -72,7 +124,6 @@ func _ready():
 
 func _on_timeout() -> void:
 	Global.score += 1
-	Global.sec += 1
 	print(\"new score \" + str(Global.score))
 	$\"../Label\".text = (\"Score: \" + str(Global.score))
 	if (Global.high_score) <= (Global.score):
@@ -114,9 +165,10 @@ libraries/ = SubResource("AnimationLibrary_5dlce")
 position = Vector2(-576, -158)
 
 [node name="Sprite2D" type="Sprite2D" parent="Floor 1/StaticBody2DObsticle1" unique_id=1741169993]
-position = Vector2(1.5000105, 32)
-scale = Vector2(3.6071413, 4.5)
+position = Vector2(7.333252, 33.499996)
+scale = Vector2(0.4947948, 0.8515624)
 texture = ExtResource("2_o8mxn")
+script = SubResource("GDScript_as46j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor 1/StaticBody2DObsticle1" unique_id=1342520515]
 position = Vector2(8, 31)

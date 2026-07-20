@@ -10,6 +10,10 @@ func _ready():
 
 func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file(\"res://Scene/main_1.tscn\")
+
+
+func _on_button_2_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://Scene/start_game_scene.tscn\")
 "
 
 [node name="EndGameScene" type="Control" unique_id=727044701]
@@ -20,12 +24,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_dcvh0")
+metadata/_edit_group_ = true
 
 [node name="Button" type="Button" parent="." unique_id=1859496162]
 layout_mode = 0
-offset_left = 521.0
+offset_left = 427.0
 offset_top = 240.0
-offset_right = 613.0
+offset_right = 519.0
 offset_bottom = 271.0
 text = "TRY AGAIN
 "
@@ -56,4 +61,15 @@ offset_right = 724.0
 offset_bottom = 317.0
 text = "Run High Score: "
 
+[node name="Button2" type="Button" parent="." unique_id=1920334048]
+layout_mode = 0
+offset_left = 579.0
+offset_top = 240.0
+offset_right = 687.0
+offset_bottom = 271.0
+text = "START MENU
+
+"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

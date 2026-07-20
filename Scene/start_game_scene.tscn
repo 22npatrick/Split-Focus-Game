@@ -8,6 +8,10 @@ func _ready():
 
 func on_button_pressed() -> void:
 	get_tree().change_scene_to_file(\"res://Scene/main_1.tscn\")
+
+
+func _on_button_2_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://Scene/settings_scene.tscn\")
 "
 
 [node name="StartGameScene" type="Control" unique_id=2121128182]
@@ -21,10 +25,10 @@ script = SubResource("GDScript_86oph")
 
 [node name="Button" type="Button" parent="." unique_id=1119947627]
 layout_mode = 0
-offset_left = 511.0
-offset_top = 319.0
-offset_right = 617.0
-offset_bottom = 350.0
+offset_left = 431.0
+offset_top = 327.0
+offset_right = 537.0
+offset_bottom = 358.0
 text = "START GAME
 "
 
@@ -46,4 +50,14 @@ offset_right = 642.0
 offset_bottom = 413.0
 text = "All Time High Score: "
 
+[node name="Button2" type="Button" parent="." unique_id=327063715]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 327.0
+offset_right = 682.0
+offset_bottom = 358.0
+text = "SETTINGS
+"
+
 [connection signal="pressed" from="Button" to="." method="on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

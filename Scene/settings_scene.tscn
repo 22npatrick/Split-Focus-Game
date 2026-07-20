@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://oee7qwqy5no2"]
+
+[sub_resource type="GDScript" id="GDScript_dn512"]
+script/source = "extends Control
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://Scene/start_game_scene.tscn\")
+
+
+func _on_check_box_1_pressed() -> void:
+	Global.speed_increase = 1.015
+	Global.max_speed = 1.50
+
+func _on_check_box_2_pressed() -> void:
+	Global.speed_increase = 1.03
+	Global.max_speed = 1.75
+
+func _on_check_box_3_pressed() -> void:
+	Global.speed_increase = 1.045
+	Global.max_speed = 2.
+"
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_dn512"]
+
+[node name="settings_scene" type="Control" unique_id=1042811709]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_dn512")
+
+[node name="Button" type="Button" parent="." unique_id=300932917]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 471.0
+offset_right = 596.0
+offset_bottom = 502.0
+text = "START MENU
+
+"
+
+[node name="Label" type="Label" parent="." unique_id=358200863]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 127.0
+offset_right = 832.0
+offset_bottom = 247.0
+theme_override_font_sizes/font_size = 57
+text = "Settings"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1727481144]
+layout_mode = 0
+offset_left = 351.0
+offset_top = 278.0
+offset_right = 446.0
+offset_bottom = 379.0
+
+[node name="CheckBox1" type="CheckBox" parent="VBoxContainer" unique_id=1046762843]
+layout_mode = 2
+button_pressed = true
+button_group = SubResource("ButtonGroup_dn512")
+text = "EASY"
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer" unique_id=1628633924]
+layout_mode = 2
+keep_pressed_outside = true
+button_group = SubResource("ButtonGroup_dn512")
+text = "MEDIUM"
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer" unique_id=461225232]
+layout_mode = 2
+button_group = SubResource("ButtonGroup_dn512")
+text = "Hard"
+
+[node name="Label2" type="Label" parent="." unique_id=125580375]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 249.0
+offset_right = 430.0
+offset_bottom = 272.0
+text = "Difficulty"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/CheckBox1" to="." method="_on_check_box_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/CheckBox2" to="." method="_on_check_box_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/CheckBox3" to="." method="_on_check_box_3_pressed"]
