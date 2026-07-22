@@ -1,16 +1,17 @@
 [gd_scene format=3 uid="uid://ccch7cq5gaxpc"]
 
-[ext_resource type="Texture2D" uid="uid://dohf54iy8lxiv" path="res://Assets/rectangle.jpg" id="1_1hqcd"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_resma"]
+load_path = "res://.godot/imported/rectangle.jpg-108bce0e4c8db48b7c8dbecfd7de0a14.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wqkqy"]
 size = Vector2(2307, 78)
 
-[node name="Test Ground" type="StaticBody2D" unique_id=1517832217]
+[node name="Ground" type="StaticBody2D" unique_id=1517832217]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=994923750]
 position = Vector2(1152.4999, 606.62494)
 scale = Vector2(1.922, 0.122)
-texture = ExtResource("1_1hqcd")
+texture = SubResource("CompressedTexture2D_resma")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=94440529]
 position = Vector2(1153.5, 607)

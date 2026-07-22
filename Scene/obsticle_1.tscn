@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cwamv1yyruxcq"]
+
+[ext_resource type="Texture2D" uid="uid://c2w3ximrqf5db" path="res://Assets/Blockers-20260702-131519-frame0.png" id="1_goki0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o8mxn"]
+radius = 37.0
+height = 118.0
+
+[node name="Obsticle1" type="Area2D" unique_id=1596026132 groups=["obstacles"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=534553401 groups=["obstacles"]]
+position = Vector2(1.5000105, 0)
+scale = Vector2(3.6071413, 4.5)
+texture = ExtResource("1_goki0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=987004831 groups=["obstacles"]]
+shape = SubResource("CapsuleShape2D_o8mxn")

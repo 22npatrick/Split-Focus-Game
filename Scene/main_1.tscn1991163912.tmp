@@ -7,25 +7,19 @@
 [sub_resource type="GDScript" id="GDScript_2prf1"]
 resource_name = "MainScript"
 script/source = "extends Node2D
-@export var speed: float = 400.0
-var direction: Vector2 = Vector2.LEFT # Moves to the right by default
-@onready var ob1 = $Obsticle1
-var ob2
-var ob3
-@onready var local_x = $Obsticle1.position.x
+#var ob1 = preload(\"res://Scene/obsticle_1.tscn\")
+var screen_sizes : Vector2i
 
 func _ready():
-	print(\"dew\")
-	print(local_x)
+	screen_sizes = get_window().size
+	print(screen_sizes)
+	# 2. Change its constant linear velocity
+#	static_body.constant_linear_velocity = Vector2(200, 0)
 
-
-func _process(delta: float) -> void:
-	ob1.position += direction * speed * delta
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed(\"enter\"):
 		get_tree().change_scene_to_file(\"res://Scene/main_1.tscn\")
-	if ob1.position.x < 0:
-		print(\"X POS REACHED\")
-		ob1.position.x = local_x
+		
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2prf1"]
@@ -72,6 +66,9 @@ position = Vector2(-400, 181)
 position = Vector2(566, 386)
 shape = SubResource("RectangleShape2D_2prf1")
 
+[node name="Obsticle1" parent="." unique_id=1686636549 instance=ExtResource("4_5dlce")]
+position = Vector2(1049, 488)
+
 [node name="Timer" type="Timer" parent="." unique_id=198772116]
 script = SubResource("GDScript_5dlce")
 
@@ -81,8 +78,5 @@ offset_top = 16.0
 offset_right = 1136.0
 offset_bottom = 80.0
 text = "Score: 0"
-
-[node name="Obsticle1" parent="." unique_id=1596026132 instance=ExtResource("4_5dlce")]
-position = Vector2(1208, 491)
 
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]

@@ -23,6 +23,7 @@ Global="*uid://cnv4t7psy4vho"
 
 obstacles=""
 floor=""
+Player=""
 
 [input]
 
