@@ -21,6 +21,8 @@ var current_ob
 var x_level 
 var y_level 
 var start = true
+@onready var player1 = $\"Player 1\"
+@onready var player2 = $\"Player 2\"
 @onready var player1_x = $\"Player 1\".position.x
 @onready var player1_y = $\"Player 1\".position.y
 @onready var player2_x = $\"Player 2\".position.x
@@ -45,6 +47,20 @@ func _process(delta: float) -> void:
 	current_ob.position += direction * Global.speed * delta
 	if Input.is_action_just_pressed(\"enter\"):
 		get_tree().change_scene_to_file(\"res://Scene/main_1.tscn\")
+		
+	if player2_y > 250:
+		player2.velocity.y = -100
+		player2_y = $\"Player 2\".position.y
+	else:
+		player2.velocity.y = 0
+		player2_y = $\"Player 2\".position.y
+		
+	if player1_y < 310:
+		player1.velocity.y = 50
+		player1_y = $\"Player 1\".position.y
+	else:
+		player1_y = $\"Player 1\".position.y
+		
 	if current_ob.position.x < 0:
 		print(\"X POS REACHED\")
 		ob_chosen = false
@@ -92,8 +108,8 @@ metadata/_edit_group_ = true
 position = Vector2(166, 508)
 
 [node name="Player 2" parent="." unique_id=1166316101 instance=ExtResource("5_as46j")]
-process_mode = 4
-position = Vector2(355, 513)
+position = Vector2(166, 288)
+motion_mode = 1
 
 [node name="Test Ground" parent="." unique_id=1517832217 instance=ExtResource("2_2prf1")]
 
