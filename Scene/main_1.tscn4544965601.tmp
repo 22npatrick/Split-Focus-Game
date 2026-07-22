@@ -18,9 +18,7 @@ var time
 @onready var array = [ob1, ob2]
 var current_ob
 @onready var ob_chosen = false
-var x_level 
 var y_level 
-var start = true
 @onready var player1_x = $\"Player 1\".position.x
 @onready var player1_y = $\"Player 1\".position.y
 @onready var player2_x = $\"Player 2\".position.x
@@ -33,10 +31,10 @@ func _ready():
 	$\"Player 1\".position.y = player1_y 
 	$\"Player 2\".position.x = player2_x
 	$\"Player 2\".position.y = player2_y
-	if start == true:
-		await get_tree().create_timer(3).timeout
-		start = false
+	await get_tree().create_timer(30).timeout
 	
+	
+
 func _process(delta: float) -> void:
 	if ob_chosen == false:
 		print(\"gre\")
@@ -49,11 +47,13 @@ func _process(delta: float) -> void:
 		print(\"X POS REACHED\")
 		ob_chosen = false
 		var rng = RandomNumberGenerator.new()
-		y_level = rng.randf_range(70, 500)
-		x_level = local_x + rng.randf_range(0,1000)
-		current_ob.position.x = x_level
+		y_level = rng.randf_range(500, 70)
+		current_ob.position.x = local_x
 		current_ob.position.y = y_level
-		print( x_level, y_level)
+		
+		
+
+		
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2prf1"]
@@ -92,7 +92,6 @@ metadata/_edit_group_ = true
 position = Vector2(166, 508)
 
 [node name="Player 2" parent="." unique_id=1166316101 instance=ExtResource("5_as46j")]
-process_mode = 4
 position = Vector2(355, 513)
 
 [node name="Test Ground" parent="." unique_id=1517832217 instance=ExtResource("2_2prf1")]
