@@ -1,8 +1,9 @@
 extends Node
+var speed = 400.0
 var score = 0
 var high_score = 0
 var speed_increase = 1.03
-var max_speed = 1.5
+var max_speed = 500
 var sec = 0
 
 func _process(_delta: float) -> void:

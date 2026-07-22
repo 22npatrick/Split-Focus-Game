@@ -3,39 +3,30 @@
 [ext_resource type="PackedScene" uid="uid://btmagaeapfqbi" path="res://Scene/player_1.tscn" id="1_g3nmm"]
 [ext_resource type="PackedScene" uid="uid://ccch7cq5gaxpc" path="res://Scene/test_ground.tscn" id="2_2prf1"]
 [ext_resource type="PackedScene" uid="uid://cwamv1yyruxcq" path="res://Scene/obsticle_1.tscn" id="4_5dlce"]
-[ext_resource type="PackedScene" uid="uid://cgywtwpwfwu0l" path="res://Scene/obsticle_2.tscn" id="4_as46j"]
 
 [sub_resource type="GDScript" id="GDScript_2prf1"]
 resource_name = "MainScript"
 script/source = "extends Node2D
+
 var direction: Vector2 = Vector2.LEFT # Moves to the right by default
 @onready var ob1 = $Obsticle1
-@onready var ob2 = $Obsticle2
+var ob2
 var ob3
 @onready var local_x = $Obsticle1.position.x
-var time
-@onready var array = [ob1, ob2]
-var current_ob
-@onready var ob_chosen = false
 
 func _ready():
 	print(\"dew\")
 	print(local_x)
 
+
 func _process(delta: float) -> void:
-	if ob_chosen == false:
-		print(\"gre\")
-		current_ob = array.pick_random()
-		ob_chosen = true
-	current_ob.position += direction * Global.speed * delta
+	ob1.position += direction * Global.speed * delta
 	if Input.is_action_just_pressed(\"enter\"):
 		get_tree().change_scene_to_file(\"res://Scene/main_1.tscn\")
-	if current_ob.position.x < 0:
+	if ob1.position.x < 0:
 		print(\"X POS REACHED\")
-		ob_chosen = false
-		current_ob.position.x = local_x
-
-		
+		ob1.position.x = local_x
+	
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2prf1"]
@@ -60,10 +51,10 @@ func _on_timeout() -> void:
 		print(Global.high_score)
 	else:
 		print(\"fre\")
-	if Global.speed < Global.max_speed:
-		Global.speed = Global.speed * Global.speed_increase
+	if  Global.speed < Global.max_speed:
+		$\"../Floor 1/AnimationPlayer\".speed_scale = $\"../Floor 1/AnimationPlayer\".speed_scale * Global.speed_increase
 	else:
-		print(\"MAX\")
+		$\"../Floor 1/AnimationPlayer\".speed_scale = 0.75
 "
 
 [node name="Main1" type="Node2D" unique_id=277038257]
@@ -94,8 +85,5 @@ text = "Score: 0"
 
 [node name="Obsticle1" parent="." unique_id=1596026132 instance=ExtResource("4_5dlce")]
 position = Vector2(1208, 491)
-
-[node name="Obsticle2" parent="." unique_id=614842608 instance=ExtResource("4_as46j")]
-position = Vector2(1343, 538)
 
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]

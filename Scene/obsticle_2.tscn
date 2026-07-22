@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cgywtwpwfwu0l"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_bnu8x"]
+
+[node name="Obsticle2" type="Area2D" unique_id=614842608]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=582560585]
+position = Vector2(2, -7.999998)
+scale = Vector2(144, 66)
+texture = SubResource("PlaceholderTexture2D_bnu8x")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1215409770]
+polygon = PackedVector2Array(-36, -39, 49, -40, 77, 28, -72, 26)
