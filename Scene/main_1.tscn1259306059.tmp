@@ -18,9 +18,7 @@ var time
 @onready var array = [ob1, ob2]
 var current_ob_1
 var current_ob_2
-@onready var ob_chosen_1 = false
-@onready var ob_chosen_2 = false
-
+@onready var ob_chosen = false
 var x_level 
 var y_level 
 var start = true
@@ -38,54 +36,46 @@ func _ready():
 	$\"Player 1\".position.y = player1_y 
 	$\"Player 2\".position.x = player2_x
 	$\"Player 2\".position.y = player2_y
+	if start == true:
+		await get_tree().create_timer(3).timeout
+		start = false
 	
 func _process(delta: float) -> void:
-
-	if ob_chosen_1 == false and ob_chosen_2 == false:
+	if ob_chosen == false:
 		print(\"gre\")
-		array.shuffle()
-		current_ob_1 = array[0] 
-		current_ob_2 = array[1] 
-		ob_chosen_1 = true
-		ob_chosen_2 = true
-	current_ob_1.position += direction * Global.speed * delta
-	current_ob_2.position += direction * Global.speed * delta
+		current_ob_1 = array.pick_random()
+		array = array.pop(current_ob_1)
+		ob_chosen = true
+	else:
+		current_ob_1.position += direction * Global.speed * delta
 	if Input.is_action_just_pressed(\"enter\"):
 		get_tree().change_scene_to_file(\"res://Scene/main_1.tscn\")
 		
-	if player2_y > 260:
+	if player2_y > 250:
 		player2.velocity.y = -100
-	elif player2_y < 50:
-		player2.velocity.y = 50
-	player2_y = $\"Player 2\".position.y
+		player2_y = $\"Player 2\".position.y
+	elif player2_y < 0:
+		player2.velocity.y = 100
+		player2_y = $\"Player 2\".position.y
+	else:
+		player2.velocity.y = 0
+		player2_y = $\"Player 2\".position.y
 		
 	if player1_y < 310:
 		player1.velocity.y = 50
-	player1_y = $\"Player 1\".position.y	
+		player1_y = $\"Player 1\".position.y
+	else:
+		player1_y = $\"Player 1\".position.y
 		
 	if current_ob_1.position.x < 0:
 		print(\"X POS REACHED\")
-		ob_chosen_1 = false
-		reset_obs(285, 500)
+		ob_chosen = false
+		var rng = RandomNumberGenerator.new()
+		y_level = rng.randf_range(70, 500)
+		x_level = local_x + rng.randf_range(0,1000)
 		current_ob_1.position.x = x_level
 		current_ob_1.position.y = y_level
 		print( x_level, y_level)
-		
-	if current_ob_2.position.x < 0:
-		print(\"X POS REACHED\")
-		ob_chosen_2 = false
-		reset_obs(70, 285)
-		current_ob_2.position.x = x_level
-		current_ob_2.position.y = y_level
-		print( x_level, y_level)
-
-	
-func reset_obs(low_r, high_r):
-		var rng = RandomNumberGenerator.new()
-		y_level = rng.randf_range(low_r, high_r)
-		x_level = local_x + rng.randf_range(0,1500)
-	
-	
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2prf1"]
@@ -147,7 +137,7 @@ offset_bottom = 80.0
 text = "Score: 0"
 
 [node name="Obsticle1" parent="." unique_id=1596026132 instance=ExtResource("4_5dlce")]
-position = Vector2(1189, 250)
+position = Vector2(1208, 491)
 
 [node name="Obsticle2" parent="." unique_id=614842608 instance=ExtResource("4_as46j")]
 position = Vector2(1343, 540)

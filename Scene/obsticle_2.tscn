@@ -2,7 +2,7 @@
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_bnu8x"]
 
-[node name="Obsticle2" type="Area2D" unique_id=614842608]
+[node name="Obsticle2" type="Area2D" unique_id=614842608 groups=["obstacles"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=582560585]
 position = Vector2(-0.49999905, -8.500001)
