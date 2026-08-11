@@ -13,7 +13,7 @@ func _physics_process(delta: float) -> void:
 			compressed = true
 			print("down")
 			scale = Vector2(1, 0.5)
-			velocity.y = -JUMP_VELOCITY/2
+			velocity.y = 100
 		if Input.is_action_just_released("ui_down")and compressed == true:
 			compressed = false
 			scale = Vector2(1, 1)
@@ -25,6 +25,7 @@ func _physics_process(delta: float) -> void:
 		# Handle jump.
 		if Input.is_action_just_pressed("up1") and is_on_floor() and compressed == false:
 			velocity.y =JUMP_VELOCITY
+		#
 		if Input.is_action_just_pressed("down1"):
 			compressed = true
 			print("down")

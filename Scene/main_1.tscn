@@ -124,7 +124,7 @@ metadata/_edit_group_ = true
 position = Vector2(166, 508)
 
 [node name="Player 2" parent="." unique_id=1166316101 instance=ExtResource("5_as46j")]
-position = Vector2(166, 288)
+position = Vector2(166, -72)
 motion_mode = 1
 
 [node name="Test Ground" parent="." unique_id=1517832217 instance=ExtResource("2_2prf1")]
@@ -133,6 +133,13 @@ motion_mode = 1
 position = Vector2(-400, 181)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Permanent Floor" unique_id=1100670722]
+position = Vector2(566, 386)
+shape = SubResource("RectangleShape2D_2prf1")
+
+[node name="Permanent Floor2" type="StaticBody2D" parent="." unique_id=1772490392 groups=["floor"]]
+position = Vector2(-400, -195)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Permanent Floor2" unique_id=96940595]
 position = Vector2(566, 386)
 shape = SubResource("RectangleShape2D_2prf1")
 
