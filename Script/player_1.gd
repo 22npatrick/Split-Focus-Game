@@ -22,6 +22,11 @@ func _physics_process(delta: float) -> void:
 	else:
 		if not is_on_floor():
 			velocity += get_gravity() * delta
+			$Sprite2D.pause()
+			$Sprite2D.play("InAir")
+		else:
+			$Sprite2D.pause()
+			$Sprite2D.play("Idle")
 		# Handle jump.
 		if Input.is_action_just_pressed("up1") and is_on_floor() and compressed == false:
 			velocity.y =JUMP_VELOCITY

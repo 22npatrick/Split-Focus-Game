@@ -34,6 +34,18 @@ region = Rect2(160, 0, 32, 32)
 atlas = ExtResource("2_sqjsi")
 region = Rect2(192, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqjsi"]
+atlas = ExtResource("2_sqjsi")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1l3j"]
+atlas = ExtResource("2_sqjsi")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axjlk"]
+atlas = ExtResource("2_sqjsi")
+region = Rect2(128, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_o1l3j"]
 animations = [{
 "frames": [{
@@ -59,8 +71,22 @@ animations = [{
 "texture": SubResource("AtlasTexture_60vgb")
 }],
 "loop": true,
-"name": &"default",
-"speed": 7.0
+"name": &"Idle",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqjsi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1l3j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axjlk")
+}],
+"loop": true,
+"name": &"InAir",
+"speed": 5.0
 }]
 
 [node name="Player 1" type="CharacterBody2D" unique_id=332314824 groups=["Player"]]
@@ -71,8 +97,11 @@ position = Vector2(1.5, 1)
 shape = SubResource("RectangleShape2D_sqjsi")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=761894424]
-scale = Vector2(3, 3)
+texture_filter = 1
+scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_o1l3j")
+animation = &"InAir"
+autoplay = "Idle"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1928504514 groups=["Player"]]
 
