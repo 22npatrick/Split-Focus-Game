@@ -1,10 +1,67 @@
 [gd_scene format=3 uid="uid://btmagaeapfqbi"]
 
-[ext_resource type="Texture2D" uid="uid://cq1en5h353fnt" path="res://Assets/icon.svg" id="1_nmpo6"]
 [ext_resource type="Script" uid="uid://cvllihcqs6hjw" path="res://Script/player_1.gd" id="1_sqjsi"]
+[ext_resource type="Texture2D" uid="uid://btpk5v0ys3lne" path="res://Assets/Kangaroo 4.0 (1).png" id="2_sqjsi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sqjsi"]
 size = Vector2(101, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fig2j"]
+atlas = ExtResource("2_sqjsi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_632wp"]
+atlas = ExtResource("2_sqjsi")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8k12"]
+atlas = ExtResource("2_sqjsi")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbjyu"]
+atlas = ExtResource("2_sqjsi")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygsma"]
+atlas = ExtResource("2_sqjsi")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ou0g"]
+atlas = ExtResource("2_sqjsi")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60vgb"]
+atlas = ExtResource("2_sqjsi")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o1l3j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fig2j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_632wp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8k12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbjyu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygsma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ou0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60vgb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
 
 [node name="Player 1" type="CharacterBody2D" unique_id=332314824 groups=["Player"]]
 script = ExtResource("1_sqjsi")
@@ -13,9 +70,9 @@ script = ExtResource("1_sqjsi")
 position = Vector2(1.5, 1)
 shape = SubResource("RectangleShape2D_sqjsi")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=656130868]
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("1_nmpo6")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=761894424]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_o1l3j")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1928504514 groups=["Player"]]
 
