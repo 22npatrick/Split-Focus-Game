@@ -67,7 +67,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [node name="Player 2" type="CharacterBody2D" unique_id=332314824 groups=["Player"]]
@@ -79,7 +79,7 @@ shape = SubResource("RectangleShape2D_sqjsi")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1127870172]
 texture_filter = 1
-scale = Vector2(3, 3)
+scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_413ie")
 autoplay = "default"
 
