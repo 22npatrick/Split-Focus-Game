@@ -2,14 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://2g24yogi4tt0" path="res://Assets/Ob2sprite.png" id="1_vp1sj"]
 
-[node name="Obsticle2" type="Area2D" unique_id=614842608 groups=["birdob", "obstacles"]]
+[node name="Obsticle2" type="Area2D" unique_id=614842608 groups=["birdob"]]
 scale = Vector2(0.8, 0.8)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=582560585 groups=["birdob", "obstacles"]]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=582560585 groups=["birdob"]]
 texture_filter = 1
 position = Vector2(-0.49999905, -8.500001)
 scale = Vector2(2, 2)
 texture = ExtResource("1_vp1sj")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1215409770 groups=["birdob", "obstacles"]]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1215409770 groups=["birdob"]]
 polygon = PackedVector2Array(-30, -18, 30, -31, 31, 11, -30, 0)

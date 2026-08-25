@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://cmbyvp6rrgi8v"]
+
+[sub_resource type="GDScript" id="GDScript_dn512"]
+script/source = "extends Control
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://Scene/start_game_scene.tscn\")
+"
+
+[node name="htp_scene" type="Control" unique_id=1042811709]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_dn512")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2062009216]
+layout_mode = 0
+offset_right = 1211.0
+offset_bottom = 725.0
+color = Color(0.621397, 0.7830592, 0.8664717, 1)
+
+[node name="Button" type="Button" parent="." unique_id=300932917]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 471.0
+offset_right = 596.0
+offset_bottom = 502.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "START MENU
+
+"
+
+[node name="Label" type="Label" parent="." unique_id=358200863]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 127.0
+offset_right = 832.0
+offset_bottom = 247.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 57
+text = "Settings"
+
+[node name="Label2" type="Label" parent="." unique_id=660842]
+layout_mode = 0
+offset_left = 315.0
+offset_top = 214.0
+offset_right = 815.0
+offset_bottom = 463.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+text = "The goal of this game is to gain the highest score possible in one 1 run. You control 2 characters: the kangaroo and the bird. In a run you gain score every second. If the kangaroo hits a red obstacle or if the bird hits a blue obstacle the run ends. If the kangaroo hits a blue obstacle or if the bird hits a red obstacle you gain +5 score.  
+
+You control the kangaroo using w and s and the bird using an up arrow and down arrow. When pressing w will make the kangaroo jump while pressing s will shrink down the kangaroo and make it stick to the floor. Pressing up the arrow makes the bird fly while pressing the down shrinks the bird and makes the bird fly down. The bird does not fly down past a certain point. 
+"
+autowrap_mode = 3
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

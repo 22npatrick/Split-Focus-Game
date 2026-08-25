@@ -12,6 +12,10 @@ func on_button_pressed() -> void:
 
 func _on_button_2_pressed() -> void:
 	get_tree().change_scene_to_file(\"res://Scene/settings_scene.tscn\")
+
+
+func _on_button_3_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://Scene/htp_scene.tscn\")
 "
 
 [node name="StartGameScene" type="Control" unique_id=2121128182]
@@ -28,16 +32,6 @@ layout_mode = 0
 offset_right = 1211.0
 offset_bottom = 725.0
 color = Color(0.621397, 0.7830592, 0.8664717, 1)
-
-[node name="Button" type="Button" parent="." unique_id=1119947627]
-layout_mode = 0
-offset_left = 431.0
-offset_top = 327.0
-offset_right = 537.0
-offset_bottom = 358.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "START GAME
-"
 
 [node name="Label" type="RichTextLabel" parent="." unique_id=473606456]
 layout_mode = 0
@@ -59,15 +53,35 @@ offset_bottom = 413.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "All Time High Score: "
 
+[node name="Button" type="Button" parent="." unique_id=1119947627]
+layout_mode = 0
+offset_left = 368.0
+offset_top = 327.0
+offset_right = 474.0
+offset_bottom = 358.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "START GAME
+"
+
 [node name="Button2" type="Button" parent="." unique_id=327063715]
 layout_mode = 0
-offset_left = 600.0
+offset_left = 525.0
 offset_top = 327.0
-offset_right = 682.0
+offset_right = 607.0
 offset_bottom = 358.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "SETTINGS
 "
 
+[node name="Button3" type="Button" parent="." unique_id=332542206]
+layout_mode = 0
+offset_left = 648.0
+offset_top = 327.0
+offset_right = 765.0
+offset_bottom = 358.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "HOW TO PLAY"
+
 [connection signal="pressed" from="Button" to="." method="on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

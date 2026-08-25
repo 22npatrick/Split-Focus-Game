@@ -40,7 +40,6 @@ func _ready():
 	
 func _process(delta: float) -> void:
 	if ob_chosen_1 == false and ob_chosen_2 == false:
-		array.shuffle()
 		current_ob_1 = array[0] 
 		current_ob_2 = array[1] 
 		ob_chosen_1 = true
@@ -61,18 +60,20 @@ func _process(delta: float) -> void:
 		
 	if current_ob_1.position.x < 0 or Global.gather_correct_ob_1 == true:
 		ob_chosen_1 = false
+		if Global.gather_correct_ob_1 == true:
+			Global.gather_correct_ob_1 = false
 		reset_obs(285, 500)
 		current_ob_1.position.x = x_level
 		current_ob_1.position.y = y_level
-		Global.gather_correct_ob_1 = false
 		print(\"RESET OB1\")
 		
 	if current_ob_2.position.x < 0 or Global.gather_correct_ob_2 == true:
 		ob_chosen_2 = false
+		if Global.gather_correct_ob_2 == true:
+			Global.gather_correct_ob_2 = false
 		reset_obs(70, 285)
 		current_ob_2.position.x = x_level
 		current_ob_2.position.y = y_level
-		Global.gather_correct_ob_2 = false
 		print(\"RESET OB2\")
 	
 func reset_obs(low_r, high_r):

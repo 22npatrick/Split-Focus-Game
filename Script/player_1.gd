@@ -44,14 +44,18 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if self == $"../Player 2":
-		if area.is_in_group("obstacles") and area.is_in_group("birdob"):
+		if area.is_in_group("birdob"):
 			get_tree().call_deferred("change_scene_to_packed", preload("res://Scene/end_game_scene.tscn"))
-		if area.is_in_group("obstacles") and area.is_in_group("kangob"):
+			print("Game end player 2")
+		if area.is_in_group("kangob"):
 			Global.score += 5	
 			Global.gather_correct_ob_1 = true
-	if self == $"../Player 1":
-		if area.is_in_group("obstacles") and area.is_in_group("kangob"):
+			print("Player 2 collect ob 1")
+	else:
+		if area.is_in_group("kangob"):
 			get_tree().call_deferred("change_scene_to_packed", preload("res://Scene/end_game_scene.tscn"))
-		if area.is_in_group("obstacles") and area.is_in_group("birdob"):
+			print("Game end player 1")
+		if area.is_in_group("birdob"):
 			Global.score += 5
 			Global.gather_correct_ob_2 = true
+			print("Player 1 collect ob 2")
