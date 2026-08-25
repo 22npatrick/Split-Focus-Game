@@ -7,6 +7,7 @@ radius = 28.0
 height = 82.0
 
 [node name="Obsticle1" type="Area2D" unique_id=1596026132 groups=["obstacles"]]
+texture_filter = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=534553401 groups=["obstacles"]]
 position = Vector2(1.5000105, 1.5000038)

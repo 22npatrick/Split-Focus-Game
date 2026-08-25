@@ -26,12 +26,19 @@ grow_vertical = 2
 script = SubResource("GDScript_dcvh0")
 metadata/_edit_group_ = true
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=911460754]
+layout_mode = 0
+offset_right = 1211.0
+offset_bottom = 725.0
+color = Color(0.621397, 0.7830592, 0.8664717, 1)
+
 [node name="Button" type="Button" parent="." unique_id=1859496162]
 layout_mode = 0
 offset_left = 427.0
 offset_top = 240.0
 offset_right = 519.0
 offset_bottom = 271.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "TRY AGAIN
 "
 
@@ -41,6 +48,7 @@ offset_left = 390.0
 offset_top = 143.0
 offset_right = 753.0
 offset_bottom = 280.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 48
 text = "YOU HAVE DIED
 "
@@ -51,6 +59,7 @@ offset_left = 396.0
 offset_top = 294.0
 offset_right = 553.0
 offset_bottom = 317.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "All Time High Score: "
 
 [node name="HighScoreLabel1" type="Label" parent="." unique_id=1114565961]
@@ -59,6 +68,7 @@ offset_left = 598.0
 offset_top = 294.0
 offset_right = 724.0
 offset_bottom = 317.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Run High Score: "
 
 [node name="Button2" type="Button" parent="." unique_id=1920334048]
@@ -67,6 +77,7 @@ offset_left = 579.0
 offset_top = 240.0
 offset_right = 687.0
 offset_bottom = 271.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "START MENU
 
 "

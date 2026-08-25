@@ -129,13 +129,6 @@ motion_mode = 1
 
 [node name="Test Ground" parent="." unique_id=1517832217 instance=ExtResource("2_2prf1")]
 
-[node name="Permanent Floor" type="StaticBody2D" parent="." unique_id=1410077902 groups=["floor"]]
-position = Vector2(-400, 181)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Permanent Floor" unique_id=1100670722]
-position = Vector2(566, 386)
-shape = SubResource("RectangleShape2D_2prf1")
-
 [node name="Permanent Floor2" type="StaticBody2D" parent="." unique_id=1772490392 groups=["floor"]]
 position = Vector2(-400, -195)
 

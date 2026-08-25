@@ -23,12 +23,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_86oph")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2006259532]
+layout_mode = 0
+offset_right = 1211.0
+offset_bottom = 725.0
+color = Color(0.621397, 0.7830592, 0.8664717, 1)
+
 [node name="Button" type="Button" parent="." unique_id=1119947627]
 layout_mode = 0
 offset_left = 431.0
 offset_top = 327.0
 offset_right = 537.0
 offset_bottom = 358.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "START GAME
 "
 
@@ -38,6 +45,7 @@ offset_left = 380.0
 offset_top = 195.0
 offset_right = 776.0
 offset_bottom = 280.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 60
 text = "SPLIT FOCUS "
 fit_content = true
@@ -48,6 +56,7 @@ offset_left = 485.0
 offset_top = 390.0
 offset_right = 642.0
 offset_bottom = 413.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "All Time High Score: "
 
 [node name="Button2" type="Button" parent="." unique_id=327063715]
@@ -56,6 +65,7 @@ offset_left = 600.0
 offset_top = 327.0
 offset_right = 682.0
 offset_bottom = 358.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "SETTINGS
 "
 
