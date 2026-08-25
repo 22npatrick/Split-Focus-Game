@@ -33,17 +33,13 @@ var start = true
 @onready var player2_y = $\"Player 2\".position.y
 
 func _ready():
-	print(\"dew\")
-	print(local_x)
 	$\"Player 1\".position.x = player1_x
 	$\"Player 1\".position.y = player1_y 
 	$\"Player 2\".position.x = player2_x
 	$\"Player 2\".position.y = player2_y
 	
 func _process(delta: float) -> void:
-
 	if ob_chosen_1 == false and ob_chosen_2 == false:
-		print(\"gre\")
 		array.shuffle()
 		current_ob_1 = array[0] 
 		current_ob_2 = array[1] 
@@ -63,22 +59,21 @@ func _process(delta: float) -> void:
 		player1.velocity.y = 50
 	player1_y = $\"Player 1\".position.y	
 		
-	if current_ob_1.position.x < 0:
-		print(\"X POS REACHED\")
+	if current_ob_1.position.x < 0 or Global.gather_correct_ob_1 == true:
 		ob_chosen_1 = false
 		reset_obs(285, 500)
 		current_ob_1.position.x = x_level
 		current_ob_1.position.y = y_level
-		print( x_level, y_level)
+		Global.gather_correct_ob_1 = false
+		print(\"RESET OB1\")
 		
-	if current_ob_2.position.x < 0:
-		print(\"X POS REACHED\")
+	if current_ob_2.position.x < 0 or Global.gather_correct_ob_2 == true:
 		ob_chosen_2 = false
 		reset_obs(70, 285)
 		current_ob_2.position.x = x_level
 		current_ob_2.position.y = y_level
-		print( x_level, y_level)
-
+		Global.gather_correct_ob_2 = false
+		print(\"RESET OB2\")
 	
 func reset_obs(low_r, high_r):
 		var rng = RandomNumberGenerator.new()
@@ -102,18 +97,12 @@ func _ready():
 func _on_timeout() -> void:
 	Global.score += 1
 	Global.sec += 1
-	print(\"new score \" + str(Global.score))
 	$\"../Label\".text = (\"Score: \" + str(Global.score))
 	if (Global.high_score) <= (Global.score):
-		print(\"PRINT\")
 		Global.high_score = Global.score
-		print(Global.high_score)
 	else:
-		print(\"fre\")
-	if Global.speed < Global.max_speed:
-		Global.speed = Global.speed * Global.speed_increase
-	else:
-		print(\"MAX\")
+		if Global.speed < Global.max_speed:
+			Global.speed = Global.speed * Global.speed_increase
 "
 
 [node name="Main1" type="Node2D" unique_id=277038257]

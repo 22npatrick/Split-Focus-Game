@@ -41,12 +41,17 @@ func _physics_process(delta: float) -> void:
 			compressed = false
 	move_and_slide()
 	var _collision = move_and_collide(velocity * delta)
-		#for i in get_slide_collision_count():
-			#collision = get_slide_collision(i)
-			#if collision.get_collider().is_in_group("obstacles"):
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.is_in_group("obstacles"):
-		get_tree().call_deferred("change_scene_to_packed", preload("res://Scene/end_game_scene.tscn"))
-	print("yes")
-	
+	if self == $"../Player 2":
+		if area.is_in_group("obstacles") and area.is_in_group("birdob"):
+			get_tree().call_deferred("change_scene_to_packed", preload("res://Scene/end_game_scene.tscn"))
+		if area.is_in_group("obstacles") and area.is_in_group("kangob"):
+			Global.score += 5	
+			Global.gather_correct_ob_1 = true
+	if self == $"../Player 1":
+		if area.is_in_group("obstacles") and area.is_in_group("kangob"):
+			get_tree().call_deferred("change_scene_to_packed", preload("res://Scene/end_game_scene.tscn"))
+		if area.is_in_group("obstacles") and area.is_in_group("birdob"):
+			Global.score += 5
+			Global.gather_correct_ob_2 = true
