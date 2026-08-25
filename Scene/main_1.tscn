@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cwamv1yyruxcq" path="res://Scene/obsticle_1.tscn" id="4_5dlce"]
 [ext_resource type="PackedScene" uid="uid://cgywtwpwfwu0l" path="res://Scene/obsticle_2.tscn" id="4_as46j"]
 [ext_resource type="PackedScene" uid="uid://wnmtc4vcq6n" path="res://Scene/player_2.tscn" id="5_as46j"]
+[ext_resource type="PackedScene" uid="uid://cr12eubflklvm" path="res://Scene/bg.tscn" id="6_bk4u7"]
 
 [sub_resource type="GDScript" id="GDScript_2prf1"]
 resource_name = "MainScript"
@@ -120,6 +121,8 @@ func _on_timeout() -> void:
 script = SubResource("GDScript_2prf1")
 metadata/_edit_group_ = true
 
+[node name="BG" parent="." unique_id=363294251 instance=ExtResource("6_bk4u7")]
+
 [node name="Player 1" parent="." unique_id=332314824 instance=ExtResource("1_g3nmm")]
 position = Vector2(166, 508)
 
@@ -130,7 +133,7 @@ motion_mode = 1
 [node name="Test Ground" parent="." unique_id=1517832217 instance=ExtResource("2_2prf1")]
 
 [node name="Permanent Floor2" type="StaticBody2D" parent="." unique_id=1772490392 groups=["floor"]]
-position = Vector2(-400, -195)
+position = Vector2(-400, -143)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Permanent Floor2" unique_id=96940595]
 position = Vector2(566, 386)
