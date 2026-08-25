@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 100
-const JUMP_VELOCITY = -450
+const JUMP_VELOCITY = -400
 var compressed = false
 
 func _physics_process(delta: float) -> void:
@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 			compressed = false
 			scale = Vector2(1, 1)
 			print("up")
-		velocity += get_gravity() * delta/10
+		velocity += get_gravity() * delta/5
 	else:
 		if not is_on_floor():
 			velocity += get_gravity() * delta

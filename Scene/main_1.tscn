@@ -53,7 +53,6 @@ func _process(delta: float) -> void:
 	current_ob_2.position += direction * Global.speed * delta
 	if Input.is_action_just_pressed(\"enter\"):
 		get_tree().change_scene_to_file(\"res://Scene/main_1.tscn\")
-		
 	if player2_y > 260:
 		player2.velocity.y = -100
 	elif player2_y < 50:
@@ -128,12 +127,11 @@ position = Vector2(166, 508)
 
 [node name="Player 2" parent="." unique_id=1166316101 instance=ExtResource("5_as46j")]
 position = Vector2(166, -72)
-motion_mode = 1
 
 [node name="Test Ground" parent="." unique_id=1517832217 instance=ExtResource("2_2prf1")]
 
 [node name="Permanent Floor2" type="StaticBody2D" parent="." unique_id=1772490392 groups=["floor"]]
-position = Vector2(-400, -143)
+position = Vector2(-400, -100)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Permanent Floor2" unique_id=96940595]
 position = Vector2(566, 386)

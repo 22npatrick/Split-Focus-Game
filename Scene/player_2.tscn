@@ -71,6 +71,7 @@ animations = [{
 }]
 
 [node name="Player 2" type="CharacterBody2D" unique_id=332314824 groups=["Player"]]
+motion_mode = 1
 script = ExtResource("1_ui1wf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=862411971]

@@ -100,7 +100,7 @@ shape = SubResource("RectangleShape2D_sqjsi")
 texture_filter = 1
 scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_o1l3j")
-animation = &"InAir"
+animation = &"Idle"
 autoplay = "Idle"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1928504514 groups=["Player"]]

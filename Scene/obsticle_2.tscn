@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://2g24yogi4tt0" path="res://Assets/Ob2sprite.png" id="1_vp1sj"]
 
 [node name="Obsticle2" type="Area2D" unique_id=614842608 groups=["obstacles"]]
+scale = Vector2(0.8, 0.8)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=582560585]
 texture_filter = 1
