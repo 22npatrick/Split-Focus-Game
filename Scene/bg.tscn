@@ -5,12 +5,12 @@
 [node name="BG" type="Node2D" unique_id=363294251]
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1716824043]
+texture_filter = 1
 scale = Vector2(1.25, 1.25)
 scroll_scale = Vector2(1, 0)
 repeat_size = Vector2(395.2, 0)
-autoscroll = Vector2(10, 0)
+autoscroll = Vector2(3, 0)
 follow_viewport = false
-ignore_camera_scroll = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1578775875]
 texture = ExtResource("1_begmr")

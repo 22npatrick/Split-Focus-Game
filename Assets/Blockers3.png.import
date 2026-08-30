@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2g24yogi4tt0"
-path="res://.godot/imported/Ob2sprite.png-68cf5073e30488ffb9d1f88c1f14407e.ctex"
+uid="uid://be1tybslawjd7"
+path="res://.godot/imported/Blockers3.png-1f84bee57a9f7e56f4d67add78a5addf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Ob2sprite.png"
-dest_files=["res://.godot/imported/Ob2sprite.png-68cf5073e30488ffb9d1f88c1f14407e.ctex"]
+source_file="res://Assets/Blockers3.png"
+dest_files=["res://.godot/imported/Blockers3.png-1f84bee57a9f7e56f4d67add78a5addf.ctex"]
 
 [params]
 

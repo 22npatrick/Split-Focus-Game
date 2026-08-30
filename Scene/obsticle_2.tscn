@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cgywtwpwfwu0l"]
 
-[ext_resource type="Texture2D" uid="uid://2g24yogi4tt0" path="res://Assets/Ob2sprite.png" id="1_vp1sj"]
+[ext_resource type="Texture2D" uid="uid://l684y2syj0lr" path="res://Assets/Ob2sprite-2.png" id="1_vp1sj"]
 
 [node name="Obsticle2" type="Area2D" unique_id=614842608 groups=["birdob"]]
 scale = Vector2(0.8, 0.8)

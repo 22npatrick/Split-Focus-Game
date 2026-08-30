@@ -65,7 +65,6 @@ func _process(delta: float) -> void:
 		reset_obs(285, 500)
 		current_ob_1.position.x = x_level
 		current_ob_1.position.y = y_level
-		print(\"RESET OB1\")
 		
 	if current_ob_2.position.x < 0 or Global.gather_correct_ob_2 == true:
 		ob_chosen_2 = false
@@ -74,7 +73,6 @@ func _process(delta: float) -> void:
 		reset_obs(70, 285)
 		current_ob_2.position.x = x_level
 		current_ob_2.position.y = y_level
-		print(\"RESET OB2\")
 	
 func reset_obs(low_r, high_r):
 		var rng = RandomNumberGenerator.new()
@@ -131,10 +129,11 @@ shape = SubResource("RectangleShape2D_2prf1")
 script = SubResource("GDScript_5dlce")
 
 [node name="Label" type="Label" parent="." unique_id=153905278]
-offset_left = 1019.0
-offset_top = 16.0
-offset_right = 1136.0
-offset_bottom = 80.0
+offset_left = 999.0
+offset_top = 18.0
+offset_right = 1180.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 32
 text = "Score: 0"
 
 [node name="Obsticle1" parent="." unique_id=1596026132 instance=ExtResource("4_5dlce")]

@@ -51,10 +51,11 @@ offset_top = 214.0
 offset_right = 815.0
 offset_bottom = 463.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 13
-text = "The goal of this game is to gain the highest score possible in one 1 run. You control 2 characters: the kangaroo and the bird. In a run you gain score every second. If the kangaroo hits a red obstacle or if the bird hits a blue obstacle the run ends. If the kangaroo hits a blue obstacle or if the bird hits a red obstacle you gain +5 score.  
+theme_override_font_sizes/font_size = 15
+text = "
+The goal of this game is to gain the highest score possible in one 1 run. You control 2 characters: the kangaroo and the bird. In a run you gain a score every second. If the kangaroo hits the kangaroo coloured obstacle or if the bird hits the bird coloured obstacle then you gain an extra +5 score. If the opposite happens the run ends. 
 
-You control the kangaroo using w and s and the bird using an up arrow and down arrow. When pressing w will make the kangaroo jump while pressing s will shrink down the kangaroo and make it stick to the floor. Pressing up the arrow makes the bird fly while pressing the down shrinks the bird and makes the bird fly down. The bird does not fly down past a certain point. 
+W and S for bird vertical movement and Up arrow and Down arrow for Kangaroo vertical movement.
 "
 autowrap_mode = 3
 
